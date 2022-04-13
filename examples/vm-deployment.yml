@@ -1,0 +1,9 @@
+---
+- name: vm-deployment
+  hosts: all
+  gather_facts: no
+  roles:
+    - role: vm-deployment
+      vmware_hostname: 1.2.3.4
+      vmware_username: "myusername"
+      vmware_password: "mypassword"
