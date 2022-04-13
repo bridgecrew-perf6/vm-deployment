@@ -1,0 +1,29 @@
+---
+- name: VM Deployment
+  vmware_guest:
+    hostname: "{{ vmware_hostname }}"
+    username: "{{ vmware_username }}"
+    password: "{{ vmware_password }}"
+    validate_certs: "{{ vmware_validate_certs }}"
+    datacenter: "{{ vmware_datacenter }}"
+    cluster: "{{ vmware_cluster }}"
+    name: "{{ inventory_hostname_short }}"
+    template: "{{ vmware_template }}"
+    folder: "{{ vmware_folder }}"
+    disk: "{{ vmware_disks }}"
+    hardware:
+      num_cpus: "{{ vmware_cpus }}"
+      num_cpu_cores_per_socket: "{{ vmware_cpus }}"
+      memory_mb: "{{ vmware_memory_mb }}"
+      hotadd_cpu: "{{ vmware_hotadd_cpu }}"
+      hotremove_cpu: "{{ vmware_hotremove_cpu }}"
+      hotadd_memory: "{{ vmware_hotadd_memory }}"
+    networks: "{{ vmware_networks }}"
+    wait_for_ip_address: "{{ vmware_wait_for_ip_address }}"
+    customization:
+      dns_servers: "{{ vmware_dns_servers }}"
+      dns_suffix: "{{ vmware_dns_domain }}"
+      hostname: "{{ inventory_hostname_short }}"
+    state: "{{ vmware_state }}"
+    annotation: "{{ vmware_annotation }}"
+  delegate_to: "{{ vmware_delegate_to }}"

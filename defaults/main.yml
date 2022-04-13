@@ -1,0 +1,8 @@
+---
+vmware_validate_certs: no
+vmware_wait_for_ip_address: yes
+vmware_delegate_to: 127.0.0.1
+vmware_hotadd_cpu: true
+vmware_hotadd_memory: true
+vmware_hotremove_cpu: true
+vmware_state: present
